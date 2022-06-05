@@ -16,6 +16,7 @@ CREATE TABLE `question`
     `question_siret`          varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL     DEFAULT NULL COMMENT 'siret号',
     `question_request`        datetime(6)                                             NULL     DEFAULT NULL COMMENT 'date_demande',
     `question_processing`     datetime(6)                                             NULL     DEFAULT NULL COMMENT 'date_traitement',
+    `status`                  text CHARACTER SET utf8 COLLATE utf8_general_ci         NULL COMMENT '其他',
     `question_update_time`    datetime(6)                                             NULL     DEFAULT NULL COMMENT '问题更新时间',
     `question_create_time`    datetime(6)                                             NULL     DEFAULT NULL COMMENT '问题创建时间',
     `question_status`         int(0)                                                  NOT NULL DEFAULT 1 COMMENT '问题状态',
