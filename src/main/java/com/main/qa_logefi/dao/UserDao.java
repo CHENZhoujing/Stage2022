@@ -13,7 +13,6 @@ import java.util.List;
 @Repository("userDao")
 public interface UserDao {
 
-
     /**
      * 根据用户名查询用户
      * 用于用户登录
