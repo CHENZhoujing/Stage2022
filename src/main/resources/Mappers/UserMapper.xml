@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<mapper xmlns="http://mybatis.org/schema/mybatis-mapper" namespace="com.main.qa_logefi.dao.UserDao">
+    <select id="findUserByName" parameterType="java.lang.String" resultType="User">
+        SELECT * FROM user WHERE user_name=#{user_name}
+    </select>
+
+    <select id="findAll" resultType="User">
+        SELECT * FROM user
+    </select>
+
+    <select id="findAllOfAskQuestion" parameterType="java.lang.Integer" resultType="Question">
+        SELECT * FROM question WHERE question_user_id=#{user_id}
+    </select>
+
+    <select id="findAllOfMakeAnswer" parameterType="java.lang.Integer" resultType="Answer">
+        SELECT * FROM answer WHERE answer_user_id=#{user_id}
+    </select>
+
+    <insert id="saveUser" parameterType="User">
+        INSERT INTO user(user_id, user_name, agency_name, user_email,
+        user_password, user_register_time, user_status)
+        VALUES (#{user_id}, #{user_name}, #{agency_name}, #{user_email},
+        #{user_password}, #{user_register_time}, #{user_status})
+    </insert>
+
+    <update id="updateUser" parameterType="User">
+        UPDATE user SET user_name=#{user_name}, agency_name=#{agency_name}, user_email=#{user_email},
+        user_password=#{user_password}, user_register_time=#{user_register_time}, user_status=#{user_status}
+        WHERE user_id=#{user_id}
+    </update>
+
+    <delete id="deleteUser" parameterType="java.lang.Integer">
+        DELETE FROM user WHERE user_id=#{user_id}
+    </delete>
+</mapper>

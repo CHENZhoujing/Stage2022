@@ -43,13 +43,6 @@ public interface UserDao {
     List<Answer> findAllOfMakeAnswer(Integer user_id);
 
     /**
-     * 根据传入参数条件查询
-     * @param user 查询条件：用户编号、用户名、用户状态
-     * @return
-     */
-    List<User> findUserByCondition(User user);
-
-    /**
      * 新增用户
      * 用户名、代理名、用户密码、用户状态为必填项
      * @param user

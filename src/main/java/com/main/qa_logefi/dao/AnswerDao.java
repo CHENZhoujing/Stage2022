@@ -20,14 +20,6 @@ public interface AnswerDao {
     List<Answer> findAnswerByUserId(Integer user_id);
 
     /**
-     * 根据问题编号查询回答
-     * @param question_id
-     * @return
-     */
-    List<Answer> findAnswerByQuestionId(Integer question_id);
-
-
-    /**
      * 新增回答
      * 回答者用户编号、回答所对应的问题编号为必填项
      * @param answer

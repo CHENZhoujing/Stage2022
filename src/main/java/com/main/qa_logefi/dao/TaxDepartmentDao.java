@@ -1,5 +1,6 @@
 package com.main.qa_logefi.dao;
 
+import com.main.qa_logefi.entity.TaxDepartment;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -10,7 +11,13 @@ import java.util.List;
 @Repository("TaxDepartmentDao")
 public interface TaxDepartmentDao {
 
-    TaxDepartmentDao findTaxDepartmentById(Integer tax_department_id);
+    TaxDepartment findTaxDepartmentById(Integer tax_department_id);
 
-    List<TaxDepartmentDao> findAll();
+    List<TaxDepartment> findAll();
+
+    void saveTaxDepartment(TaxDepartment taxDepartment);
+
+    void updateTaxDepartment(TaxDepartment taxDepartment);
+
+    void deleteTaxDepartment(Integer tax_department_id);
 }

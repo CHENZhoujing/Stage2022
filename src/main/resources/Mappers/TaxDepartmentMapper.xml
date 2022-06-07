@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<mapper xmlns="http://mybatis.org/schema/mybatis-mapper" namespace="com.main.qa_logefi.dao.TaxDepartmentDao">
+    <select id="findTaxDepartmentById" parameterType="java.lang.Integer" resultType="TaxDepartment">
+        SELECT * FROM tax_department WHERE tax_department_id=#{tax_department_id}
+    </select>
+
+    <select id="findAll" resultType="TaxDepartment">
+        SELECT * FROM tax_department
+    </select>
+
+    <insert id="saveTaxDepartment" parameterType="TaxDepartment">
+        INSERT INTO tax_department(tax_department_id, tax_department_name)
+        VALUES (#{tax_department_id}, #{tax_department_name})
+    </insert>
+
+    <update id="updateTaxDepartment" parameterType="updateTaxDepartment">
+        UPDATE tax_department SET tax_department_name=#{tax_department_name}
+        WHERE tax_department_id=#{tax_department_id}
+    </update>
+
+    <delete id="deleteTaxDepartment" parameterType="java.lang.Integer">
+        DELETE FROM tax_department WHERE tax_department_id=#{tax_department_id}
+    </delete>
+</mapper>
