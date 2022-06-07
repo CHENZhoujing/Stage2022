@@ -1,7 +1,6 @@
 package com.main.qa_logefi.dao;
 
 import com.main.qa_logefi.entity.Answer;
-import com.main.qa_logefi.entity.User;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;

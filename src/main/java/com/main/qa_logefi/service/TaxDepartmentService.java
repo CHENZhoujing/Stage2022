@@ -4,7 +4,7 @@ import com.main.qa_logefi.entity.TaxDepartment;
 
 import java.util.List;
 
-public interface TaxDepartementService {
+public interface TaxDepartmentService {
 
     /**
      * 根据税局编号查询税局
