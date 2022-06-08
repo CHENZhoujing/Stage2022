@@ -46,7 +46,7 @@
         WHERE question_id=#{question_id}
     </update>
 
-    <delete id="updateQuestion" parameterType="Question">
+    <delete id="deleteQuestion" parameterType="Question">
         DELETE FROM question WHERE question_id=#{question_id}
     </delete>
 

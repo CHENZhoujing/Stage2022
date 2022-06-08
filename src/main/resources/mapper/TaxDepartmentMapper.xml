@@ -23,7 +23,7 @@
         VALUES (#{tax_department_id}, #{tax_department_name})
     </insert>
 
-    <update id="updateTaxDepartment" parameterType="updateTaxDepartment">
+    <update id="updateTaxDepartment" parameterType="TaxDepartment">
         UPDATE tax_department SET tax_department_name=#{tax_department_name}
         WHERE tax_department_id=#{tax_department_id}
     </update>
