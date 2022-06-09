@@ -14,6 +14,12 @@ import java.util.List;
 public interface UserDao {
 
     /**
+     * 根据id查询用户
+     * @param user_id
+     * @return
+     */
+    User findUserById(Integer user_id);
+    /**
      * 根据用户名查询用户
      * 用于用户登录
      * @param user_name

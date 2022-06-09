@@ -24,15 +24,23 @@
         SELECT * FROM question WHERE question_id=#{question_id}
     </select>
 
+    <select id="findQuestionByUserId" parameterType="java.lang.Integer" resultMap="Question">
+        SELECT * FROM question WHERE question_user_id=#{question_user_id}
+    </select>
+
     <select id="findAll" resultType="Question">
         SELECT * FROM question
+    </select>
+
+    <select id="findTotal" resultType="java.lang.Integer">
+        SELECT COUNT(*) FROM question;
     </select>
 
     <insert id="saveQuestion" parameterType="Question">
         INSERT INTO question(question_id, question_user_id, question_tax_department,
         question_name_cn, question_name_en, question_siren, question_siret, question_request,
         question_processing, status, question_update_time, question_create_time, question_status)
-        values (#{question_id}, #{question_user_id}, #{question_tax_department},
+        VALUES (#{question_id}, #{question_user_id}, #{question_tax_department},
         #{question_name_cn}, #{question_name_en}, #{question_siren}, #{question_siret}, #{question_request},
         #{question_processing}, #{status}, #{question_update_time}, #{question_create_time}, #{question_status})
     </insert>

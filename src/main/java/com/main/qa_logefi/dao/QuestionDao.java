@@ -19,11 +19,19 @@ public interface QuestionDao {
     Question findQuestionById(Integer question_id);
 
     /**
+     * 根据用户编号查询问题
+     * @param question_user_id
+     * @return
+     */
+    List<Question> findQuestionByUserId(Integer question_user_id);
+
+    /**
      * 查询所有问题
      * @return
      */
     List<Question> findAll();
 
+    Integer findTotal();
     /**
      * 新增问题
      * 问题的提问者用户编号、问题状态为必填项

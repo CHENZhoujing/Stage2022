@@ -89,3 +89,6 @@ CREATE TABLE `answer`
   COLLATE = utf8_general_ci
   ROW_FORMAT = Dynamic;
 
+
+INSERT INTO `tax_department` VALUES ('SIE PARIS 2EME');
+INSERT INTO `tax_department` VALUES ('SIE PARIS 16 CHAILLOT');
