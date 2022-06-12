@@ -13,6 +13,9 @@ spring:
     view:
       prefix: /WEB-INF/pages/
       suffix: .jsp
+  web:
+    resources:
+      static-locations: "/WEB-INF"
 
 mybatis:
   mapper-locations: classpath:mapper/*.xml
