@@ -38,7 +38,8 @@ public class LoginController {
     @RequestMapping(value = "/User", method = {RequestMethod.POST})
     public String UserLogin(String user_name, String user_password, Model model, HttpServletRequest request) {
         //根据用户名查询用户信息
-        User database_user = userService.findUserByName(user_name);
+        //User database_user = userService.findUserByName(user_name);
+        User database_user = null;
 
         //如果用户名与用户密码输入正确，则需要保存用户的编号和昵称信息
         if (database_user != null) {
