@@ -4,21 +4,6 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.main.qa_logefi.dao.QuestionDao">
-    <resultMap id="BaseResultMap" type="com.main.qa_logefi.entity.Question">
-        <id column="question_id" jdbcType="INTEGER" property="questionId"/>
-        <result column="question_user_id" jdbcType="INTEGER" property="questionUserId"/>
-        <result column="question_tax_department" jdbcType="INTEGER" property="questionTaxDepartment"/>
-        <result column="question_name_cn" jdbcType="VARCHAR" property="questionNameCn"/>
-        <result column="question_name_en" jdbcType="VARCHAR" property="questionNameEn"/>
-        <result column="question_siren" jdbcType="VARCHAR" property="questionSiren"/>
-        <result column="question_siret" jdbcType="VARCHAR" property="questionSiret"/>
-        <result column="question_request" jdbcType="TIMESTAMP" property="questionRequest"/>
-        <result column="question_processing" jdbcType="TIMESTAMP" property="questionProcessing"/>
-        <result column="status" jdbcType="VARCHAR" property="status"/>
-        <result column="questionUpdateTime" jdbcType="TIMESTAMP" property="questionUpdateTime"/>
-        <result column="question_create_time" jdbcType="TIMESTAMP" property="questionCreateTime"/>
-        <result column="question_status" jdbcType="INTEGER" property="questionStatus"/>
-    </resultMap>
 
     <select id="findQuestionById" parameterType="java.lang.Integer" resultType="Question">
         SELECT * FROM question WHERE question_id=#{question_id}

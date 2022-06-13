@@ -90,5 +90,9 @@ CREATE TABLE `answer`
   ROW_FORMAT = Dynamic;
 
 
-INSERT INTO `tax_department` VALUES ('SIE PARIS 2EME');
-INSERT INTO `tax_department` VALUES ('SIE PARIS 16 CHAILLOT');
+INSERT INTO `tax_department` (tax_department_name) VALUES ('SIE PARIS 2EME');
+INSERT INTO `tax_department` (tax_department_name) VALUES ('SIE PARIS 16 CHAILLOT');
+INSERT INTO `user` (user_name, agency_name, user_password, user_status) VALUES ('root', 'root', 'root', 0);
+INSERT INTO `user` (user_name, agency_name, user_password, user_status) VALUES ('user', 'user', 'user', 1);
+
+DELETE FROM `user` WHERE user_id = 1;

@@ -5,53 +5,67 @@
   Time: 19:13
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <% String path = request.getContextPath();
     String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + path + "/";
 %>
 
 <html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>登录页面</title>
-
-    <link rel="stylesheet" href="<%=path%>/css/bootstrap.min.css">
-    <link rel="stylesheet" href="<%=path%>/css/bootstrap-theme.css">
-
-    <script src="<%=path%>/js/jquery-3.5.1.min.js"></script>
-    <script src="<%=path%>/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="<%=path%>/assets/css/theme.css">
+    <title>登录界面</title>
 </head>
-<body>
-<div class="container-fluid">
-    <div class="col-md-4 col-md-offset-4">
-        <div style="text-align: center;margin-top: 300px;">
-            <h1>用户登录</h1>
+
+<body class="bg-light">
+<!-- container -->
+<div class="container d-flex flex-column">
+    <div class="row align-items-center justify-content-center g-0
+        min-vh-100">
+        <div class="col-12 col-md-8 col-lg-6 col-xxl-4 py-8 py-xl-0">
+            <!-- Card -->
+            <div class="card smooth-shadow-md">
+                <!-- Card body -->
+                <div class="card-body p-6">
+                    <div class="mb-4">
+                        <a href="<%=path%>index.html"><img src="<%=path%>assets/images/brand/logo/logo-primary.svg"
+                                                           class="mb-2" alt=""></a>
+                        <p class="mb-6">请输入你的信息</p>
+                    </div>
+                    <!-- Form -->
+                    <form action="<%=path%>/Login/User" name="loginform" method="post">
+                        <!-- Username -->
+                        <div class="mb-3">
+                            <label for="user_name" class="form-label">用户名</label>
+                            <input type="text" id="user_name" class="form-control" name="user_name" placeholder="在这里输入用户名"
+                                   required="">
+                        </div>
+                        <!-- Password -->
+                        <div class="mb-3">
+                            <label for="user_password" class="form-label">密码</label>
+                            <input type="password" id="user_password" class="form-control" name="user_password"
+                                   placeholder="**************" required="">
+                        </div>
+                        <!-- Checkbox -->
+                        <div class="d-lg-flex justify-content-between align-items-center mb-4">
+                            <div class="form-check custom-checkbox">
+                                <input type="checkbox" class="form-check-input" id="rememberme">
+                                <label class="form-check-label" for="rememberme">保持登录状态</label>
+                            </div>
+                        </div>
+                        <div>
+                            <!-- Button -->
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-primary">登录</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
-        <form action="<%=path%>/Login/User" name="loginform" method="post">
-            <div class="form-group">
-                <label for="user_name" style="display:inline;">用户名：</label>
-                <input type="text" class="form-control" id="user_name" name="user_name"
-                       onkeyup="this.value=this.value.replace(/[^\w_]/g,'');" style="display:inline;"
-                       autocomplete="off"/>
-            </div>
-            <div class="form-group">
-                <label for="user_password" style="display:inline;">用户密码：</label>
-                <input type="password" class="form-control" id="user_password" name="user_password"
-                       style="display:inline;" autocomplete="off"/>
-            </div>
-            <div class="col">
-                <div class="col-md-4" style="text-align: right;">
-                    <button type="submit" class="btn btn-success">登录</button>
-                </div>
-                <div class="col-md-4 col-md-offset-4" style="text-align: left;">
-                    <a href="<%=path%>/Register/RegisterPage">
-                        <button type="button" class="btn btn-info">注册</button>
-                    </a>
-                </div>
-            </div>
-        </form>
     </div>
 </div>
+<!-- Scripts -->
+@@include("../partials/scripts.html")
 </body>
+
 </html>
