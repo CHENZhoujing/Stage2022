@@ -24,7 +24,7 @@
         SELECT * FROM question WHERE question_id=#{question_id}
     </select>
 
-    <select id="findQuestionByUserId" parameterType="java.lang.Integer" resultMap="Question">
+    <select id="findQuestionByUserId" parameterType="java.lang.Integer" resultType="Question">
         SELECT * FROM question WHERE question_user_id=#{question_user_id}
     </select>
 

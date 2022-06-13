@@ -1,6 +1,7 @@
 package com.main.qa_logefi.dao;
 
 import com.main.qa_logefi.entity.Answer;
+import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -8,6 +9,7 @@ import java.util.List;
 /**
  * 持久层 回答接口
  */
+@Mapper
 @Repository("answerDao")
 public interface AnswerDao {
 

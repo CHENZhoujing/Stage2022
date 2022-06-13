@@ -5,16 +5,6 @@
 
 <mapper namespace="com.main.qa_logefi.dao.AnswerDao">
 
-    <resultMap id="BaseResultMap" type="com.main.qa_logefi.entity.Answer">
-        <id column="answer_id" jdbcType="INTEGER" property="answerId"/>
-        <result column="answer_user_id" jdbcType="INTEGER" property="answerUserId"/>
-        <result column="answer_question_id" jdbcType="INTEGER" property="answerQuestionId"/>
-        <result column="answer_content" jdbcType="VARCHAR" property="answerContent"/>
-        <result column="answer_update_time" jdbcType="TIMESTAMP" property="answerUpdateTime"/>
-        <result column="answer_create_time" jdbcType="TIMESTAMP" property="answerCreateTime"/>
-        <result column="answer_status" jdbcType="INTEGER" property="answerStatus"/>
-    </resultMap>
-
     <select id="findAnswerByUserId" parameterType="java.lang.Integer" resultType="Answer">
         SELECT * FROM answer WHERE answer_id = #{answer_id}
     </select>

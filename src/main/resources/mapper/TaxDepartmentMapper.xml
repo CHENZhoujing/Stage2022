@@ -5,11 +5,6 @@
 
 <mapper namespace="com.main.qa_logefi.dao.TaxDepartmentDao">
 
-    <resultMap id="BaseResultMap" type="com.main.qa_logefi.entity.TaxDepartment">
-        <id column="tax_department_id" jdbcType="INTEGER" property="taxDepartmentId"/>
-        <result column="tax_department_name" jdbcType="VARCHAR" property="taxDepartmentName"/>
-    </resultMap>
-
     <select id="findTaxDepartmentById" parameterType="java.lang.Integer" resultType="TaxDepartment">
         SELECT * FROM tax_department WHERE tax_department_id=#{tax_department_id}
     </select>
